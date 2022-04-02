@@ -126,4 +126,10 @@ def questions(message):
         if num in i:
             bot.send_message(message.chat.id,i,reply_markup=keyboard)
 
+@bot.message_handler(commands=["add"])
+def add_(message):
+    keyboard = types.InlineKeyboardMarkup()
+    keyboard.add(types.InlineKeyboardButton( "Message the developer", url="telegram.me/phin03"))
+    bot.send_message(message.chat.id,'Если есть предложения по изменению бота, свяжитесь с разработчиком.',reply_markup=keyboard)
+    
 bot.polling()
